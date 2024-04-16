@@ -7,14 +7,27 @@ class HomePage {
         return cy.xpath(`//button[@class='hero-descriptor_btn btn btn-primary']`);
     }
 
-    registerUser(user) {
+    fillRegistrationData(user) {
         cy.xpath(`//input[@id='signupName']`).type(user.name);
         cy.xpath(`//input[@id='signupLastName']`).type(user.lastName);
         cy.xpath(`//input[@id='signupEmail']`).type(user.email);
         cy.xpath(`//input[@id='signupPassword']`).type(user.userPassword);
         cy.xpath(`//input[@id='signupRepeatPassword']`).type(user.userPassword);
-        cy.xpath(`//button[@class='btn btn-primary']`).click();
+        //cy.xpath(`//button[@class='btn btn-primary']`).click();
         return this;
+    }
+
+    verifyFilledRegistrationData(user) {
+        cy.xpath(`//input[@id='signupName']`).should('have.value', user.name);
+        cy.xpath(`//input[@id='signupLastName']`).should('have.value', user.lastName);
+        cy.xpath(`//input[@id='signupEmail']`).should('have.value', user.email);
+        cy.xpath(`//input[@id='signupPassword']`).should('have.value', user.userPassword);
+        cy.xpath(`//input[@id='signupRepeatPassword']`).should('have.value', user.userPassword);
+        return this;
+    }
+
+    get registerButton() {
+        return cy.xpath(`//button[@class='btn btn-primary']`);
     }
 
     verifyCreatedUser(user) {
