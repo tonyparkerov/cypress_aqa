@@ -7,21 +7,41 @@ class HomePage {
         return cy.xpath(`//button[@class='hero-descriptor_btn btn btn-primary']`);
     }
 
+    get signupNameInput() {
+        return cy.xpath(`//input[@id='signupName']`);
+    }
+
+    get signupLastNameInput() {
+        return cy.xpath(`//input[@id='signupLastName']`);
+    }
+
+    get signupEmailInput() {
+        return cy.xpath(`//input[@id='signupEmail']`);
+    }
+
+    get signupPasswordInput() {
+        return cy.xpath(`//input[@id='signupPassword']`);
+    }
+
+    get signupRepeatPasswordInput() {
+        return cy.xpath(`//input[@id='signupRepeatPassword']`);
+    }
+
     fillRegistrationData(user) {
-        cy.xpath(`//input[@id='signupName']`).type(user.name);
-        cy.xpath(`//input[@id='signupLastName']`).type(user.lastName);
-        cy.xpath(`//input[@id='signupEmail']`).type(user.email);
-        cy.xpath(`//input[@id='signupPassword']`).type(user.userPassword);
-        cy.xpath(`//input[@id='signupRepeatPassword']`).type(user.userPassword);
+        this.signupNameInput.type(user.name);
+        this.signupLastNameInput.type(user.lastName);
+        this.signupEmailInput.type(user.email);
+        this.signupPasswordInput.type(user.userPassword);
+        this.signupRepeatPasswordInput.type(user.userPassword);
         return this;
     }
 
     verifyFilledRegistrationData(user) {
-        cy.xpath(`//input[@id='signupName']`).should('have.value', user.name);
-        cy.xpath(`//input[@id='signupLastName']`).should('have.value', user.lastName);
-        cy.xpath(`//input[@id='signupEmail']`).should('have.value', user.email);
-        cy.xpath(`//input[@id='signupPassword']`).should('have.value', user.userPassword);
-        cy.xpath(`//input[@id='signupRepeatPassword']`).should('have.value', user.userPassword);
+        this.signupNameInput.should('have.value', user.name);
+        this.signupLastNameInput.should('have.value', user.lastName);
+        this.signupEmailInput.should('have.value', user.email);
+        this.signupPasswordInput.should('have.value', user.userPassword);
+        this.signupRepeatPasswordInput.should('have.value', user.userPassword);
         return this;
     }
 
