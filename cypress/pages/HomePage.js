@@ -13,7 +13,6 @@ class HomePage {
         cy.xpath(`//input[@id='signupEmail']`).type(user.email);
         cy.xpath(`//input[@id='signupPassword']`).type(user.userPassword);
         cy.xpath(`//input[@id='signupRepeatPassword']`).type(user.userPassword);
-        //cy.xpath(`//button[@class='btn btn-primary']`).click();
         return this;
     }
 
