@@ -16,6 +16,16 @@ let emailGenerator = emailLength => {
 export const user = {
     name: 'Anton',
     lastName: 'Test',
-    userPassword: 'Qwerty123!',
+    password: 'Qwerty123!',
     email: emailGenerator(7)
+}
+
+export const car = {
+    brand: 'Ford',
+    model: 'Fusion',
+    reportDate: '18.04.2024',
+    mileage: 100,
+    expenseMileage: 101,
+    liters: 20,
+    totalCost: 20
 }

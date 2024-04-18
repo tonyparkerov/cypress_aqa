@@ -1,11 +1,34 @@
-import {homePage} from "../pages/HomePage";
-import {user} from "../data/testData";
+import {user, car} from "../data/testData";
+import {garageStep} from "../steps/garage-step";
+import {fuelExpensesStep} from "../steps/fuelExpenses-step";
+import {fuelExpensesPage} from "../pages/FuelExpensesPage";
 
 describe('Test Suite', () => {
-  it('Test sign up in Garage service', () => {
+  before(() => {
     cy.visit('/');
-    homePage.signUpButton.click();
-    homePage.fillRegistrationData(user).verifyFilledRegistrationData(user).registerButton.click();
-    homePage.verifyCreatedUser(user);
+    garageStep.signUp(user);
   })
+
+  beforeEach(() => {
+    cy.visit('/');
+    garageStep.signIn(user);
+  })
+
+  it('Check car added', () => {
+    garageStep.addCar(car).verifyCarAdded(car);
+  });
+
+  it('Check fuel expense added', () => {
+    fuelExpensesPage.visitFuelExpenses();
+    fuelExpensesStep.addFuelExpenses(car).verifyAddedFuelExpenses(car);
+  });
+
+  it('Check fuel expense removed', () => {
+    fuelExpensesPage.visitFuelExpenses();
+    fuelExpensesStep.removeFuelExpenses().verifyRemovedFuelExpenses();
+  });
+
+  it('Check car removed', () => {
+    garageStep.removeCar().verifyCarRemoved()
+  });
 })

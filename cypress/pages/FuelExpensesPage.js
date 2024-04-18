@@ -70,6 +70,14 @@ class FuelExpensesPage extends BasePage {
         return cy.xpath(`//table[@class='table expenses_table']`);
     }
 
+    get tableFirstRow() {
+        return cy.xpath(`//table[@class='table expenses_table']/tbody/tr/td`);
+    }
+
+    get tableFirstElem() {
+        return cy.xpath(`//table[@class='table expenses_table']`);
+    }
+
     get removeEntryButton() {
         return cy.xpath(`//button[@class='btn btn-delete']`);
     }

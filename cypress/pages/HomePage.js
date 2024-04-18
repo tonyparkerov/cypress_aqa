@@ -1,8 +1,6 @@
 import BasePage from "./BasePage";
 
-const basePage = new BasePage();
-
-class HomePage {
+class HomePage extends BasePage {
     get signUpButton() {
         return cy.xpath(`//button[@class='hero-descriptor_btn btn btn-primary']`);
     }
@@ -31,8 +29,8 @@ class HomePage {
         this.signupNameInput.type(user.name);
         this.signupLastNameInput.type(user.lastName);
         this.signupEmailInput.type(user.email);
-        this.signupPasswordInput.type(user.userPassword);
-        this.signupRepeatPasswordInput.type(user.userPassword);
+        this.signupPasswordInput.type(user.password);
+        this.signupRepeatPasswordInput.type(user.password);
         return this;
     }
 
@@ -40,8 +38,8 @@ class HomePage {
         this.signupNameInput.should('have.value', user.name);
         this.signupLastNameInput.should('have.value', user.lastName);
         this.signupEmailInput.should('have.value', user.email);
-        this.signupPasswordInput.should('have.value', user.userPassword);
-        this.signupRepeatPasswordInput.should('have.value', user.userPassword);
+        this.signupPasswordInput.should('have.value', user.password);
+        this.signupRepeatPasswordInput.should('have.value', user.password);
         return this;
     }
 
@@ -51,9 +49,25 @@ class HomePage {
 
     verifyCreatedUser(user) {
         cy.url().should('include', '/panel/garage');
-        basePage.sidebarProfileButton.click();
+        this.sidebarProfileButton.click();
         cy.url().should('include', '/panel/profile');
         cy.xpath(`//p[@class='profile_name display-4']`).should('contain.text', `${user.name} ${user.lastName}`);
+    }
+
+    get signInButton() {
+        return cy.xpath(`//button[@class='btn btn-outline-white header_signin']`);
+    }
+
+    get signInModalEmailInput() {
+        return cy.xpath(`//input[@id='signinEmail']`);
+    }
+
+    get signInModalPasswordInput() {
+        return cy.xpath(`//input[@id='signinPassword']`);
+    }
+
+    get signInModalLoginButton() {
+        return cy.xpath(`//button[@class='btn btn-primary']`);
     }
 }
 
