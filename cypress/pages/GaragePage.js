@@ -11,7 +11,7 @@ class GaragePage extends BasePage {
     }
 
     get addCarButton() {
-        return cy.xpath(`//button[@class='btn btn-primary']`);
+        return cy.get('button').contains('Add car');
     }
 
     get carBrandDropdown() {
@@ -47,7 +47,7 @@ class GaragePage extends BasePage {
     }
 
     get addedCarName() {
-        return cy.xpath(`//p[@class='car_name h2']`);
+        return cy.get(`p.car_name.h2`);
     }
 
     get addedCarUpdateMileageInput() {
