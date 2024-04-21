@@ -30,7 +30,7 @@ class HomePage extends BasePage {
         this.signupLastNameInput.type(user.lastName);
         this.signupEmailInput.type(user.email);
         this.signupPasswordInput.type(user.password);
-        this.signupRepeatPasswordInput.type(user.password);
+        this.signupRepeatPasswordInput.type(user.repeatPassword);
         return this;
     }
 
