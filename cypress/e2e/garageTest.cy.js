@@ -1,4 +1,5 @@
-import {user, car} from "../data/testData";
+import {user} from "../data/User";
+import {car} from "../data/testData";
 import {garageStep} from "../steps/garage-step";
 import {fuelExpensesStep} from "../steps/fuelExpenses-step";
 import {fuelExpensesPage} from "../pages/FuelExpensesPage";
