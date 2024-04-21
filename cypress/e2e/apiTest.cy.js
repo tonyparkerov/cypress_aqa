@@ -15,6 +15,7 @@ describe('Test with api requests', () => {
         garageStep.addCar(car);
         cy.request('GET', '/api/cars').then(response => {
             expect(response.status).to.eql(200);
+            expect(response.body.data.length).to.eql(1);
             expect(response.body.data[0].brand).to.eql(car.brand);
             expect(response.body.data[0].model).to.eql(car.model);
             expect(response.body.data[0].initialMileage).to.eql(car.mileage);
