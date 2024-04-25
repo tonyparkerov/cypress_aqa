@@ -1,12 +1,12 @@
 {
   "status": "ok",
   "data": {
-    "id": 117314,
+    "id": 117321,
     "carBrandId": 4,
     "carModelId": 17,
     "initialMileage": 100,
-    "updatedMileageAt": "2024-04-25T15:38:35.014Z",
-    "carCreatedAt": "2024-04-25T15:38:35.014Z",
+    "updatedMileageAt": "2024-04-25T15:50:48.214Z",
+    "carCreatedAt": "2024-04-25T15:50:48.214Z",
     "mileage": 100,
     "brand": "Porsche",
     "model": "Cayenne",

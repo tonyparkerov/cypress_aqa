@@ -24,7 +24,7 @@ describe('Test with api requests', () => {
         })
     });
 
-    it('Add fuel expenses and check',() => {
+    it('Add fuel expenses via API',() => {
         cy.visit('/');
         garageStep.signIn(user);
         garageStep.addCar(carPorsche);
@@ -34,6 +34,11 @@ describe('Test with api requests', () => {
                 apiValidator.verifyAddFuelExpensesResponse(response, fuelExpenses);
             });
         })
+    });
+
+    it('Check added fuel expenses',() => {
+        cy.visit('/');
+        garageStep.signIn(user);
         fuelExpensesPage.visitFuelExpenses();
         fuelExpensesStep.verifyAddedFuelExpenses(fuelExpenses, true);
     });
