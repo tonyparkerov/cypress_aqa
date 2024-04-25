@@ -8,7 +8,6 @@ class ApiValidator {
         expect(response.body.data[0].initialMileage).to.eql(car.mileage);
         expect(response.body.data[0].mileage).to.eql(car.mileage);
         expect(response.body.data[0].logo).to.eql(`${car.brand.toLowerCase()}.png`);
-        return this.verifyAddedCarInGetCars;
     }
     verifyAddFuelExpensesResponse(response, fuelExpenses) {
         expect(response.status).to.eql(200);
@@ -18,7 +17,6 @@ class ApiValidator {
         expect(response.body.data.mileage).to.eql(fuelExpenses.mileage);
         expect(response.body.data.liters).to.eql(fuelExpenses.liters);
         expect(response.body.data.totalCost).to.eql(fuelExpenses.totalCost);
-        return this.verifyAddFuelExpensesResponse;
     }
 }
 
