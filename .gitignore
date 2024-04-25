@@ -1,3 +1,3 @@
 node_modules/
 .idea/
-fixtures/response.json
+cypress/fixtures/response.json

@@ -23,8 +23,6 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import {garageStep} from "../steps/garage-step";
-import {car} from "../data/testData";
 
 Cypress.Commands.add('apiAddFuelExpenses', fuelExpenses => {
     cy.request('POST', '/api/expenses', fuelExpenses)
