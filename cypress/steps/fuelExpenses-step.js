@@ -13,11 +13,19 @@ class FuelExpensesStep extends GeneralStep {
         return this;
     }
 
-    verifyAddedFuelExpenses(car) {
-        fuelExpensesPage.tableFirstRow.eq(0).should('contain.text', `${car.reportDate}`);
-        fuelExpensesPage.tableFirstRow.eq(1).should('contain.text', `${car.expenseMileage}`);
-        fuelExpensesPage.tableFirstRow.eq(2).should('contain.text', `${car.liters}`);
-        fuelExpensesPage.tableFirstRow.eq(3).should('contain.text', `${car.totalCost}`);
+    verifyAddedFuelExpenses(fuelExpenses, isAddedViaApi = false) {
+        if(isAddedViaApi) {
+            const formattedDate = fuelExpenses.reportedAt.split("-").reverse().join(".");
+            fuelExpensesPage.tableFirstRow.eq(0).should('contain.text', formattedDate);
+            fuelExpensesPage.tableFirstRow.eq(1).should('contain.text', `${fuelExpenses.mileage}`);
+            fuelExpensesPage.tableFirstRow.eq(2).should('contain.text', `${fuelExpenses.liters}`);
+            fuelExpensesPage.tableFirstRow.eq(3).should('contain.text', `${fuelExpenses.totalCost}`);
+        } else {
+            fuelExpensesPage.tableFirstRow.eq(0).should('contain.text', `${fuelExpenses.reportDate}`);
+            fuelExpensesPage.tableFirstRow.eq(1).should('contain.text', `${fuelExpenses.expenseMileage}`);
+            fuelExpensesPage.tableFirstRow.eq(2).should('contain.text', `${fuelExpenses.liters}`);
+            fuelExpensesPage.tableFirstRow.eq(3).should('contain.text', `${fuelExpenses.totalCost}`);
+        }
     }
 
     removeFuelExpenses() {

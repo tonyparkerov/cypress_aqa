@@ -23,3 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('apiAddFuelExpenses', fuelExpenses => {
+    cy.request('POST', '/api/expenses', fuelExpenses)
+})

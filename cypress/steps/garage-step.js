@@ -7,7 +7,14 @@ class GarageStep extends GeneralStep {
         garagePage.carBrandDropdown.select(car.brand);
         garagePage.carModelDropdown.select(car.model);
         garagePage.carMileageInput.type(car.mileage);
+        cy.intercept('POST', '/api/cars').as('addCar');
         garagePage.addButton.click();
+        cy.wait('@addCar').then(interception => {
+            expect(interception.response.statusCode).to.eql(201);
+            const carId = interception.response.body.data.id;
+            cy.wrap(carId). as('carId');
+            cy.writeFile('cypress/fixtures/response.json', interception.response.body);
+        });
         return this;
     }
 

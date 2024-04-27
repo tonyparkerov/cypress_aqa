@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "data": {
+    "id": 117323,
+    "carBrandId": 4,
+    "carModelId": 17,
+    "initialMileage": 100,
+    "updatedMileageAt": "2024-04-25T15:54:42.032Z",
+    "carCreatedAt": "2024-04-25T15:54:42.032Z",
+    "mileage": 100,
+    "brand": "Porsche",
+    "model": "Cayenne",
+    "logo": "porsche.png"
+  }
+}
