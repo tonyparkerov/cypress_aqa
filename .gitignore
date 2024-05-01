@@ -2,3 +2,7 @@ node_modules/
 .idea/
 cypress/integration/fixtures/response.json
 cypress/.DS_Store
+cypress/videos
+reports
+mochawesome-report
+cypress/downloads

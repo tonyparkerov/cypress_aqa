@@ -1,0 +1,277 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 8,
+    "passes": 8,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 8,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-05-01T11:02:08.095Z",
+    "end": "2024-05-01T11:02:47.223Z",
+    "duration": 39128
+  },
+  "results": [
+    {
+      "uuid": "e06342fb-c529-4bf4-9537-f161eab92380",
+      "title": "",
+      "fullFile": "cypress/integration/tests/garageTest.cy.js",
+      "file": "cypress/integration/tests/garageTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "494c301e-2114-49e2-a830-1f75e27058b3",
+          "title": "Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check car added",
+              "fullTitle": "Test Suite Check car added",
+              "timedOut": null,
+              "duration": 6540,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_garageStep.garageStep.addCar(_testData.car).verifyCarAdded(_testData.car);",
+              "err": {},
+              "uuid": "924db95b-f043-4789-8a62-469efa628dad",
+              "parentUUID": "494c301e-2114-49e2-a830-1f75e27058b3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check fuel expense added",
+              "fullTitle": "Test Suite Check fuel expense added",
+              "timedOut": null,
+              "duration": 3933,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_fuelExpensesStep.fuelExpensesStep.visitFuelExpenses();\n_fuelExpensesStep.fuelExpensesStep.addFuelExpenses(_testData.car).verifyAddedFuelExpenses(_testData.car);",
+              "err": {},
+              "uuid": "410d96d0-ef26-46e8-8e11-c51e1ac95832",
+              "parentUUID": "494c301e-2114-49e2-a830-1f75e27058b3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check fuel expense removed",
+              "fullTitle": "Test Suite Check fuel expense removed",
+              "timedOut": null,
+              "duration": 2625,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_fuelExpensesStep.fuelExpensesStep.visitFuelExpenses();\n_fuelExpensesStep.fuelExpensesStep.removeFuelExpenses().verifyRemovedFuelExpenses();",
+              "err": {},
+              "uuid": "4027e8a0-bf7b-4465-9721-7d5bfe72a1a1",
+              "parentUUID": "494c301e-2114-49e2-a830-1f75e27058b3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check car removed",
+              "fullTitle": "Test Suite Check car removed",
+              "timedOut": null,
+              "duration": 2628,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_garageStep.garageStep.removeCar().verifyCarRemoved();",
+              "err": {},
+              "uuid": "d68911c4-42f6-4070-8dba-823a0153030d",
+              "parentUUID": "494c301e-2114-49e2-a830-1f75e27058b3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "924db95b-f043-4789-8a62-469efa628dad",
+            "410d96d0-ef26-46e8-8e11-c51e1ac95832",
+            "4027e8a0-bf7b-4465-9721-7d5bfe72a1a1",
+            "d68911c4-42f6-4070-8dba-823a0153030d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15726,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "36d77342-e6fa-4ecf-829e-05ecbe4c0118",
+      "title": "",
+      "fullFile": "cypress/integration/tests/apiTest.cy.js",
+      "file": "cypress/integration/tests/apiTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9b88db21-b6e2-45c5-9977-6c8d524813c8",
+          "title": "Test with api requests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign Up via API",
+              "fullTitle": "Test with api requests Sign Up via API",
+              "timedOut": null,
+              "duration": 1312,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('POST', '/api/auth/signup', _User.user).then(response => {\n  expect(response.status).to.eql(201);\n});",
+              "err": {},
+              "uuid": "a108d5b0-0895-49fd-b5e4-d870f2d0e2d8",
+              "parentUUID": "9b88db21-b6e2-45c5-9977-6c8d524813c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add car and check it via API",
+              "fullTitle": "Test with api requests Add car and check it via API",
+              "timedOut": null,
+              "duration": 5022,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_garageStep.garageStep.signIn(_User.user);\n_garageStep.garageStep.addCar(_testData.car);\ncy.get('@carId').then(carId => {\n  _testData.car.carId = carId;\n  cy.request('GET', '/api/cars').then(response => {\n    _ApiValidator.apiValidator.verifyAddedCarInGetCars(response, _testData.car);\n  });\n});",
+              "err": {},
+              "uuid": "a56729d3-cbde-4646-bea4-488ca82d2d63",
+              "parentUUID": "9b88db21-b6e2-45c5-9977-6c8d524813c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add fuel expenses via API",
+              "fullTitle": "Test with api requests Add fuel expenses via API",
+              "timedOut": null,
+              "duration": 3429,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_garageStep.garageStep.signIn(_User.user);\n_garageStep.garageStep.addCar(_testData.carPorsche);\ncy.get('@carId').then(carId => {\n  _testData.fuelExpenses.carId = carId;\n  cy.apiAddFuelExpenses(_testData.fuelExpenses).then(response => {\n    _ApiValidator.apiValidator.verifyAddFuelExpensesResponse(response, _testData.fuelExpenses);\n  });\n});",
+              "err": {},
+              "uuid": "fe97936e-2aa0-45b1-ab48-d3c8c36fc01c",
+              "parentUUID": "9b88db21-b6e2-45c5-9977-6c8d524813c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check added fuel expenses",
+              "fullTitle": "Test with api requests Check added fuel expenses",
+              "timedOut": null,
+              "duration": 2674,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_fuelExpensesStep.fuelExpensesStep.signIn(_User.user);\n_fuelExpensesStep.fuelExpensesStep.visitFuelExpenses();\n_fuelExpensesStep.fuelExpensesStep.verifyAddedFuelExpenses(_testData.fuelExpenses, true);",
+              "err": {},
+              "uuid": "d8bc3da7-9dee-411f-9190-76cf061050a9",
+              "parentUUID": "9b88db21-b6e2-45c5-9977-6c8d524813c8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a108d5b0-0895-49fd-b5e4-d870f2d0e2d8",
+            "a56729d3-cbde-4646-bea4-488ca82d2d63",
+            "fe97936e-2aa0-45b1-ab48-d3c8c36fc01c",
+            "d8bc3da7-9dee-411f-9190-76cf061050a9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12437,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/regression",
+        "html": false,
+        "overwrite": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
