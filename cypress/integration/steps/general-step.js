@@ -6,6 +6,7 @@ export default class GeneralStep {
         homePage.fillRegistrationData(user).registerButton.click();
     }
     signIn(user) {
+        cy.visit('/');
         homePage.signInButton.click();
         homePage.signInModalEmailInput.type(user.email);
         homePage.signInModalPasswordInput.type(user.password);

@@ -3,7 +3,6 @@ import {car, carPorsche, fuelExpenses} from "../data/testData";
 import {garageStep} from "../steps/garage-step";
 import {apiValidator} from "../api/ApiValidator";
 import {fuelExpensesStep} from "../steps/fuelExpenses-step";
-import {fuelExpensesPage} from "../pages/FuelExpensesPage";
 
 describe('Test with api requests', () => {
     it('Sign Up via API', () => {
@@ -13,7 +12,6 @@ describe('Test with api requests', () => {
     })
 
     it('Add car and check it via API', () => {
-        cy.visit('/');
         garageStep.signIn(user);
         garageStep.addCar(car);
         cy.get('@carId').then(carId => {
@@ -25,7 +23,6 @@ describe('Test with api requests', () => {
     });
 
     it('Add fuel expenses via API',() => {
-        cy.visit('/');
         garageStep.signIn(user);
         garageStep.addCar(carPorsche);
         cy.get('@carId').then(carId => {
@@ -37,9 +34,8 @@ describe('Test with api requests', () => {
     });
 
     it('Check added fuel expenses',() => {
-        cy.visit('/');
-        garageStep.signIn(user);
-        fuelExpensesPage.visitFuelExpenses();
+        fuelExpensesStep.signIn(user);
+        fuelExpensesStep.visitFuelExpenses();
         fuelExpensesStep.verifyAddedFuelExpenses(fuelExpenses, true);
     });
 })

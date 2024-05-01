@@ -13,7 +13,7 @@ class GarageStep extends GeneralStep {
             expect(interception.response.statusCode).to.eql(201);
             const carId = interception.response.body.data.id;
             cy.wrap(carId). as('carId');
-            cy.writeFile('cypress/fixtures/response.json', interception.response.body);
+            cy.writeFile('cypress/integration/fixtures/response.json', interception.response.body);
         });
         return this;
     }

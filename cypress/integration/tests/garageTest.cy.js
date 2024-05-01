@@ -2,7 +2,6 @@ import {user} from "../data/User";
 import {car} from "../data/testData";
 import {garageStep} from "../steps/garage-step";
 import {fuelExpensesStep} from "../steps/fuelExpenses-step";
-import {fuelExpensesPage} from "../pages/FuelExpensesPage";
 
 describe('Test Suite', () => {
   before(() => {
@@ -11,7 +10,6 @@ describe('Test Suite', () => {
   })
 
   beforeEach(() => {
-    cy.visit('/');
     garageStep.signIn(user);
   })
 
@@ -20,12 +18,12 @@ describe('Test Suite', () => {
   });
 
   it('Check fuel expense added', () => {
-    fuelExpensesPage.visitFuelExpenses();
+    fuelExpensesStep.visitFuelExpenses();
     fuelExpensesStep.addFuelExpenses(car).verifyAddedFuelExpenses(car);
   });
 
   it('Check fuel expense removed', () => {
-    fuelExpensesPage.visitFuelExpenses();
+    fuelExpensesStep.visitFuelExpenses();
     fuelExpensesStep.removeFuelExpenses().verifyRemovedFuelExpenses();
   });
 

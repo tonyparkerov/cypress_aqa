@@ -1,3 +1,4 @@
 node_modules/
 .idea/
-cypress/fixtures/response.json
+cypress/integration/fixtures/response.json
+cypress/.DS_Store

@@ -2,6 +2,11 @@ import GeneralStep from "./general-step";
 import {fuelExpensesPage} from "../pages/FuelExpensesPage";
 
 class FuelExpensesStep extends GeneralStep {
+    visitFuelExpenses() {
+        fuelExpensesPage.headerFuelExpensesButton.click();
+        return this;
+    }
+
     addFuelExpenses(car) {
         fuelExpensesPage.addExpenseButton.click();
         fuelExpensesPage.expenseVehicleDropdown.select(`${car.brand} ${car.model}`);

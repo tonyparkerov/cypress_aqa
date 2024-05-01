@@ -1,11 +1,6 @@
 import BasePage from "./BasePage";
 
 class FuelExpensesPage extends BasePage {
-    visitFuelExpenses() {
-        this.headerFuelExpensesButton.click();
-        return this;
-    }
-
     get emptyState() {
         return cy.xpath(`//div[@class='panel-page_empty panel-empty']`);
     }
