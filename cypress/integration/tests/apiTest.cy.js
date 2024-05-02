@@ -19,7 +19,7 @@ describe('Test with api requests', () => {
 
     it('Add fuel expenses via API',() => {
         garageStep.signIn(user);
-        garageStep.addCar(carPorsche).then(response => {
+        garageStep.addCar(carPorsche).then(() => {
             fuelExpenses.carId = carPorsche.carId;
             cy.apiAddFuelExpenses(fuelExpenses).then(response => {
                 apiValidator.verifyAddFuelExpensesResponse(response, fuelExpenses);
