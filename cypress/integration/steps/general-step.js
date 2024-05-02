@@ -2,6 +2,7 @@ import {homePage} from "../pages/HomePage";
 
 export default class GeneralStep {
     signUp(user) {
+        cy.visit('/');
         homePage.signUpButton.click();
         homePage.fillRegistrationData(user).registerButton.click();
     }

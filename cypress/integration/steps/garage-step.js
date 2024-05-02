@@ -9,13 +9,14 @@ class GarageStep extends GeneralStep {
         garagePage.carMileageInput.type(car.mileage);
         cy.intercept('POST', '/api/cars').as('addCar');
         garagePage.addButton.click();
-        cy.wait('@addCar').then(interception => {
+        return cy.wait('@addCar').then(interception => {
             expect(interception.response.statusCode).to.eql(201);
             const carId = interception.response.body.data.id;
-            cy.wrap(carId). as('carId');
+            cy.wrap(carId).as('carId');
+            cy.get('@carId').then(carId => car.carId = carId);
             cy.writeFile('cypress/integration/fixtures/response.json', interception.response.body);
         });
-        return this;
+        //return this;
     }
 
     verifyCarAdded(car) {

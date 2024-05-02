@@ -5,7 +5,6 @@ import {fuelExpensesStep} from "../steps/fuelExpenses-step";
 
 describe('Test Suite', () => {
   before(() => {
-    cy.visit('/');
     garageStep.signUp(user);
   })
 
@@ -14,7 +13,8 @@ describe('Test Suite', () => {
   })
 
   it('Check car added', () => {
-    garageStep.addCar(car).verifyCarAdded(car);
+    garageStep.addCar(car);
+    garageStep.verifyCarAdded(car)
   });
 
   it('Check fuel expense added', () => {

@@ -3,6 +3,7 @@ node_modules/
 cypress/integration/fixtures/response.json
 cypress/.DS_Store
 cypress/videos
+cypress/screenshots
 reports
 mochawesome-report
 cypress/downloads
