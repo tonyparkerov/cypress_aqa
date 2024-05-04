@@ -1,15 +1,15 @@
-import {user} from "../data/User";
+import {randUser} from "../data/user-data";
 import {car} from "../data/testData";
 import {garageStep} from "../steps/garage-step";
 import {fuelExpensesStep} from "../steps/fuelExpenses-step";
 
 describe('Test Suite', () => {
   before(() => {
-    garageStep.signUp(user);
+    garageStep.signUp(randUser);
   })
 
   beforeEach(() => {
-    garageStep.signIn(user);
+    garageStep.signIn(randUser);
   })
 
   it('Check car added', () => {
